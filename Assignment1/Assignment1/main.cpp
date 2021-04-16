@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 //Name: Patricio Garzon	
-//StudentId: 
+//StudentId: 2032567
 
 int fibArray[10];
 int RecursiveMultiplication(int a, int b);
