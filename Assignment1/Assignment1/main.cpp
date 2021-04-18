@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
 	std::cout << std::endl;// ->Adding an extra line
 
 	printRecursiveFactorialLessThan50(10);//Expected result: 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1
-	std::cout << printRecursiveFactorialLessThan50(10) << std::endl;
+	std::cout << "\n"<<printRecursiveFactorialLessThan50(10) << std::endl;
 	return 0;
 }
 
@@ -108,12 +108,15 @@ int printRecursiveFactorialLessThan50(int n)
 	//As an example:
 	//printRecursiveFactorialLessThan50(10) -> "10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1"
 	//The function just prints what is between "".
-	if (n > 1) {
 
+	assert(n >= 0);
+	if (n > 1) {
+		cout << n << " ";
 		return  n * printRecursiveFactorialLessThan50(n - 1);
+		
 	}
 	else {
-		return 1;
+		cout << n << " ";
 	}
 	
 }
