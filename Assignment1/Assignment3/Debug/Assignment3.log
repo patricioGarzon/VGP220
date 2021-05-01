@@ -7,4 +7,5 @@ C:\Users\nico\Desktop\VGP220\Assignment1\Assignment3\Inventory.h(241,18): warnin
 C:\Users\nico\Desktop\VGP220\Assignment1\Assignment3\Inventory.h(270,25): warning C4018: '<': signed/unsigned mismatch
 C:\Users\nico\Desktop\VGP220\Assignment1\Assignment3\Inventory.h(325,21): warning C4018: '<': signed/unsigned mismatch
 C:\Users\nico\Desktop\VGP220\Assignment1\Assignment3\Inventory.h(341,21): warning C4018: '<': signed/unsigned mismatch
+  LINK : C:\Users\nico\Desktop\VGP220\Assignment1\Debug\Assignment3.exe not found or not built by the last incremental link; performing full link
   Assignment3.vcxproj -> C:\Users\nico\Desktop\VGP220\Assignment1\Debug\Assignment3.exe
