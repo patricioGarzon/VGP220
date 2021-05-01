@@ -1,0 +1,11 @@
+﻿  main.cpp
+C:\Users\nico\Desktop\VGP220\Assignment1\Assignment3\Inventory.h(154,32): warning C4838: conversion from 'int' to 'uint32_t' requires a narrowing conversion
+C:\Users\nico\Desktop\VGP220\Assignment1\Assignment3\Inventory.h(169,32): warning C4838: conversion from 'int' to 'uint32_t' requires a narrowing conversion
+C:\Users\nico\Desktop\VGP220\Assignment1\Assignment3\Inventory.h(188,31): warning C4838: conversion from 'int' to 'uint32_t' requires a narrowing conversion
+C:\Users\nico\Desktop\VGP220\Assignment1\Assignment3\Inventory.h(225,18): warning C4018: '>': signed/unsigned mismatch
+C:\Users\nico\Desktop\VGP220\Assignment1\Assignment3\Inventory.h(241,18): warning C4018: '>': signed/unsigned mismatch
+C:\Users\nico\Desktop\VGP220\Assignment1\Assignment3\Inventory.h(270,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\nico\Desktop\VGP220\Assignment1\Assignment3\Inventory.h(325,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\nico\Desktop\VGP220\Assignment1\Assignment3\Inventory.h(341,21): warning C4018: '<': signed/unsigned mismatch
+  LINK : C:\Users\nico\Desktop\VGP220\Assignment1\Debug\Assignment3.exe not found or not built by the last incremental link; performing full link
+  Assignment3.vcxproj -> C:\Users\nico\Desktop\VGP220\Assignment1\Debug\Assignment3.exe
