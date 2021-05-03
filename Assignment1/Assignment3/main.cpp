@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Inventory.h"
 
+//Grade: 68/100. Nice.
+
 int main(int argc, char* argv[])
 {
 	Item hps{ "Healing Potion", 12, ItemType::Potion };

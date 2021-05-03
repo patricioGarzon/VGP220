@@ -7,6 +7,7 @@ class Inventory
 {
 public:
 
+	//COMMENT: Use more often the initialization list for constructors.
 	Inventory() 
 	{
 		//TODO: Implement a default constructor for the Inventory class where the max number of slots
@@ -16,7 +17,7 @@ public:
 		mInventory = new Item[mMaxSlots];
 	}
 
-
+	//COMMENT: Use more often the initialization list for constructors.
 	Inventory(uint32_t capacity)
 	{
 		//TODO: Implement a non default constructor for the Inventory class where 
@@ -27,7 +28,8 @@ public:
 		
 	}
 
-
+	//ERROR: -10. This is not how you create a copy constructor. You should copy all the elements 
+	//of other.
 	Inventory(const Inventory& other)
 		:mMaxSlots(other.mMaxSlots), mSlotsOccupied(other.mSlotsOccupied)
 	{
@@ -52,14 +54,15 @@ public:
 		//delete[] other.mInventory;
 	}
 
-
+	//ERROR: -10. You are allocating memory, so you should delete.
 	~Inventory() 
 	{
 		//TODO: Implement a destructor for this class.
 		//delete[] mInventory;
 	}
 
-
+	//ERROR: -10. This is not how you create a copy assignment operator. You should copy all the elements 
+	//of other.
 	//TODO: Implement a copy assignment operator
 	Inventory& operator = (const Inventory& other) {
 		if (this != &other) {
@@ -98,10 +101,58 @@ public:
 
 
 
+	//ERROR: -2. Sorry, it was all good, until you created an hp Item inside this function...
+	//Follow the correct code for your review.
+	//void AddItem(Item newItem)
+	//{
+	//	if (!isFullForItem(&newItem))
+	//	{
+	//		int slotIndex = SearchItemByNameLessThan50(newItem.name);
+	//		//I have this Item in inventory
+	//		if (slotIndex != -1)
+	//		{
+	//			int futureQuantity = mInventory[slotIndex].quantity + newItem.quantity;
+	//			if (futureQuantity > 50)
+	//			{
+	//				newItem.quantity = futureQuantity - 50;
+	//				mInventory[slotIndex].quantity = 50;
+	//				mInventory[mSlotsOccupied] = newItem;
+	//				mSlotsOccupied++;
+	//				return;
+	//			}
+
+	//			mInventory[slotIndex].quantity += newItem.quantity;
+	//			return;
+	//		}
+	//		//Inserting for the first time
+	//		else
+	//		{
+	//			//Expanding inventory;
+	//			if ((newItem.type == ItemType::Charm) && (newItem.name.compare("Expansion") == 0))
+	//			{
+	//				Item* temp = mInventory;
+	//				mMaxSlots += 5;
+	//				mInventory = new Item[mMaxSlots];
+	//				for (int i = 0; i < mSlotsOccupied; ++i)
+	//				{
+	//					mInventory[i] = temp[i];
+	//				}
+	//				delete[] temp;
+	//				temp = nullptr;
+	//			}
+
+	//			//After expansion, insert.
+	//			mInventory[mSlotsOccupied] = newItem;
+	//			mSlotsOccupied++;
+	//		}
+	//	}
+
+	//	std::cout << "Adding " << newItem.quantity << " " << newItem.name << " in inventory." << "\n";
+	//}
+
 
 	void AddItem(Item newItem) 
 	{
-
 
 		//TODO: Implement AddItem MethodThis method adds a new item to the inventory. 
 		//First it searches for this item to see if the item exists, and if the item exists 
@@ -151,7 +202,7 @@ public:
 							mInventory[index].quantity += amountToFulfill;
 							total = newItem.quantity - amountToFulfill;
 							//call the function again passing a new item with the remainding quantity
-							Item hps{ newItem.name, total, newItem.type };
+							Item hps{ newItem.name, total, newItem.type }; //What???
 							++mSlotsOccupied;
 							AddItem(hps);
 						}
@@ -166,7 +217,7 @@ public:
 						}
 						else {
 							total = newItem.quantity - 50;
-							Item hps{ newItem.name, total, newItem.type };
+							Item hps{ newItem.name, total, newItem.type };//What?????
 							++mSlotsOccupied;
 							AddItem(hps);
 						}
