@@ -112,12 +112,44 @@ public:
 	void DisplayList()
 	{
 		// TODO: 1
+		if (!IsEmpty()) {
+			Node* curNode = mHead;
+			while (curNode != nullptr) {
+				std::cout << curNode->data << ", ";
+				curNode = curNode->next;
+			}
+		}	
+
 	}
 
 	//Displays all the elements of the linked list in reverse order
 	void DisplayReverseList()
 	{
 		// TODO: 2
+		if (!IsEmpty()) {
+
+			//create temp node and prev node
+			Node* curNode = mHead;
+			Node* prevNode = mHead;
+			//createa node that adress list backwards
+			Node* reverseNode = mHead;
+			while (curNode != nullptr) {
+				//check if curNode is not headNode
+				if (curNode != mHead) {
+					//assignt curNode->next to reverseNextNode
+					reverseNode = curNode;
+					reverseNode->next = prevNode;
+
+					//prevNode = curNode;
+
+				}
+				curNode = curNode->next;
+			}
+			while (reverseNode != nullptr) {
+				std::cout << reverseNode->data << ", ";
+				reverseNode = reverseNode->next;
+			}
+		}
 	}
 
 	//This function allows the user to modify an existance data
@@ -125,12 +157,14 @@ public:
 	bool ModifyContent(T content, T newContent)
 	{
 		// TODO: 3
+
 	}
 
 	//Clear all the data from the linked list
 	void ClearList()
 	{
 		// TODO: 4
+
 	}
 
 private:
