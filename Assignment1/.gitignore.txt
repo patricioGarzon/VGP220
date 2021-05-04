@@ -39,3 +39,9 @@
 ehthumbs.db
 Thumbs.db
 
+<<<<<<< HEAD
+=======
+# IGNORING ALL RECURSIVE HIDDEN FILES #
+!/.gitignore
+.vs/
+>>>>>>> main
