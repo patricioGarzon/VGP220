@@ -125,31 +125,20 @@ public:
 	//Displays all the elements of the linked list in reverse order
 	void DisplayReverseList()
 	{
+		std::cout  << "\n ";
 		// TODO: 2
-		if (!IsEmpty()) {
-
-			//create temp node and prev node
-			Node* curNode = mHead;
-			Node* prevNode = mHead;
-			//createa node that adress list backwards
-			Node* reverseNode = mHead;
-			while (curNode != nullptr) {
-				//check if curNode is not headNode
-				if (curNode != mHead) {
-					//assignt curNode->next to reverseNextNode
-					reverseNode = curNode;
-					reverseNode->next = prevNode;
-
-					//prevNode = curNode;
-
-				}
-				curNode = curNode->next;
-			}
-			while (reverseNode != nullptr) {
-				std::cout << reverseNode->data << ", ";
-				reverseNode = reverseNode->next;
-			}
+		Node* temp = NULL;
+		Node* prev = NULL;
+		Node* current = (mHead);
+		while (current != NULL) {
+			temp = current->next;
+			current->next = prev;
+			prev = current;
+			current = temp;
 		}
+		(mHead) = prev;
+		DisplayList();
+		//return list to normal
 	}
 
 	//This function allows the user to modify an existance data
@@ -157,18 +146,47 @@ public:
 	bool ModifyContent(T content, T newContent)
 	{
 		// TODO: 3
-
+		if (!IsEmpty()) {
+			int x = 0;
+			Node* curNode = mHead;
+			while (curNode != nullptr) {
+				if (x == content) {
+					break;
+				}
+				x++;
+			}
+			if (curNode->data == content) {
+				curNode->data = newContent;
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
 	}
 
 	//Clear all the data from the linked list
 	void ClearList()
 	{
 		// TODO: 4
+		
+		Node* current = mHead;
+		Node* next = NULL;
 
+		while (current != NULL)
+		{
+			next = current->next;
+			free(current);
+			current = next;
+		}
+
+
+		*mHead = NULL;
 	}
 
 private:
 	Node* mHead;
+	Node* mCurrent;
 
 	Node* CreateNode(T data)
 	{

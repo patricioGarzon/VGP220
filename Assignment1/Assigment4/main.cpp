@@ -7,7 +7,7 @@
 int main(int argc, char* argv[])
 {
 	LinkedList<int> myList;
-	//Queue<int> myQueue;
+	Queue<int> myQueue ;
 
 	//Linked List Test
 	myList.Insert(1);
@@ -28,21 +28,21 @@ int main(int argc, char* argv[])
 	//myList.ClearList();
 	//myList.DisplayList();
 
-
+	std::cout << " \n";
 	//Queue test
-	//myQueue.Enqueue(1);
-	//myQueue.Enqueue(2);
-	//myQueue.Enqueue(3);
-	//myQueue.Enqueue(4);
-	//myQueue.Enqueue(5);
-	//myQueue.DisplayQueue();
-	//
-	//int removedElement = 0;
-	//if (myQueue.Daqueue(removedElement)) 
-	//{
-	//	std::cout << "Element " << removedElement << " removed.\n";
-	//}
-	//myQueue.DisplayQueue();
+	myQueue.Enqueue(1);
+	myQueue.Enqueue(2);
+	myQueue.Enqueue(3);
+	myQueue.Enqueue(4);
+	myQueue.Enqueue(5);
+	myQueue.DisplayQueue();
+	
+	int removedElement = 0;
+	if (myQueue.Daqueue(removedElement)) 
+	{
+		std::cout << "Element " << removedElement << " removed.\n";
+	}
+	myQueue.DisplayQueue();
 
 	//TODO_OPTIONAL: Run more tests for your data structures.
 }

@@ -10,19 +10,54 @@ public:
 	Queue();
 	~Queue();
 	//Inserts the data in the queue.
-	void Enqueue(T data);
+	void Enqueue(T data) {
+		if (!isEmpty()) {
+			if (mCurrentSize < mCapacity) {
+				mData[mCurrentSize] = data;
+				mCurrentSize++;
+			}
+			else {
+				std::cout << "queu is full";
+			}
+		}
+		else {
+			mData[mCurrentSize] = data;
+			rear++;
+			mCurrentSize++;
+		}
+	}
 	
 	//Removes an element from the queue and returns this element in the output parameter
 	//Also it returns true if the object was removed and false if the Queue is empty
-	bool Daqueue(T& output);
+	bool Daqueue(T& output) {
+		if (!isEmpty()) {
+			output = mData[front];
+			front++;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 	
 	//Returns true if queue is empty, false otherwise
-	bool isEmpty();
+	bool isEmpty() {
+		if (mCurrentSize != 0) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
 
 	//Display all the elements in the queue:
 	//Example, lets suppose you inserted 1, 2, 3, 4, 5
 	//Display should print: "front->1, 2, 3, 4, 5<-rear"
-	void DisplayQueue();
+	void DisplayQueue() {
+		for (int x = front; x < mCurrentSize; x++) {
+			std::cout << "data: " << mData[x] << std::endl;
+		}
+	}
 private:
 	int front;
 	int rear;
@@ -30,3 +65,19 @@ private:
 	int mCapacity;
 	T* mData;
 };
+
+template<typename T>
+ Queue<T>::Queue()
+{
+	front = 0;
+	rear = 0;
+	mCapacity = 10;
+	mCurrentSize = 0;
+	mData = new T[mCapacity];
+}
+
+template<typename T>
+inline Queue<T>::~Queue()
+{
+	delete[] mData;
+}
