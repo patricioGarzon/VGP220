@@ -27,8 +27,6 @@ int main(int argc, char* argv[])
 	//myList.DisplayList();
 	//myList.ClearList();
 	//myList.DisplayList();
-
-	std::cout << " \n";
 	//Queue test
 	myQueue.Enqueue(1);
 	myQueue.Enqueue(2);
