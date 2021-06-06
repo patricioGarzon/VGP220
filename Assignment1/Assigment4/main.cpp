@@ -2,6 +2,7 @@
 #include "LinkedList.h"
 #include "Queue.h"
 
+//Grade: 73/100
 
 //TESTS
 int main(int argc, char* argv[])
@@ -22,7 +23,7 @@ int main(int argc, char* argv[])
 	myList.Insert(10);
 
 	myList.DisplayList();
-	myList.DisplayReverseList();
+	//myList.DisplayReverseList();
 	//myList.ModifyContent(5, 30);
 	//myList.DisplayList();
 	//myList.ClearList();

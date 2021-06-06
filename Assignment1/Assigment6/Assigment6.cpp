@@ -1,6 +1,9 @@
 // Assigment6.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+//Grade: 70/100
+
+
 #include <iostream>
 #include "dictionary.h"
 #include <vector>

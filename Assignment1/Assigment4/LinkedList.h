@@ -122,6 +122,19 @@ public:
 
 	}
 
+	//ERROR: -5: In a display function, you can't modify the actual data. A good approach to this 
+	// task is to create a recursive function to print like: 
+	/*void printReverse(Node* node)
+	{
+		if (node->next != nullptr)
+		{
+			printReverse(node->next);
+		}
+
+		std::cout << node->data << " ";
+	}*/
+	//And then call inside DisplayReverseList using mHead as the initial parameter.
+	
 	//Displays all the elements of the linked list in reverse order
 	void DisplayReverseList()
 	{
@@ -141,6 +154,11 @@ public:
 		//return list to normal
 	}
 
+	//ERROR -5: This method is not modifyng the content of a linked list.
+	//You have to walk through the list until current == nullptr or current->data == content.
+	// If current->data == content, make current->data = newContent, and return true. 
+	// Otherwise return false.
+	
 	//This function allows the user to modify an existance data
 	//Returns true if the conten was modified and false if it wasn't.
 	bool ModifyContent(T content, T newContent)
@@ -165,6 +183,8 @@ public:
 		}
 	}
 
+	//ERROR -5: Why are you using free? We never used free in class, we are using delete...
+	
 	//Clear all the data from the linked list
 	void ClearList()
 	{

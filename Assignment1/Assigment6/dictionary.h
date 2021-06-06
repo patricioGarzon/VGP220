@@ -17,6 +17,7 @@ template<typename T>
 class Dictionary
 {
 public:
+	//ERROR : -5. You are not allocating memory for the entire capaciy. Your main loop goes from 0 to < capacity -1...
 	Dictionary(int capacity)
 		: mCapacity(capacity)
 		, mCurrentSize(0)
@@ -46,6 +47,8 @@ public:
 		}
 
 	}
+
+	//ERROR: -5 DANGLING POINTERS.
 
 	~Dictionary()
 	{
@@ -101,6 +104,8 @@ public:
 		hash *= seed;
 		return hash % mCapacity;
 	}
+
+	//ERROR: -20. Well, at least you tried right? But you are missing a lot of steps on your implementation.
 
 	void Insert(const std::string& key, T value)
 	{

@@ -9,6 +9,9 @@ class Queue
 public:
 	Queue();
 	~Queue();
+
+	//ERROR: -5: You are overflowing the buffer
+
 	//Inserts the data in the queue.
 	void Enqueue(T data) {
 		if (!isEmpty()) {
@@ -27,6 +30,7 @@ public:
 		}
 	}
 	
+	//ERROR: -5 .You are just advancing with iterators without a managed memory.
 	//Removes an element from the queue and returns this element in the output parameter
 	//Also it returns true if the object was removed and false if the Queue is empty
 	bool Daqueue(T& output) {
@@ -76,6 +80,7 @@ template<typename T>
 	mData = new T[mCapacity];
 }
 
+ //ERROR: -2 Dangling pointers. mData = nullptr;
 template<typename T>
 inline Queue<T>::~Queue()
 {
