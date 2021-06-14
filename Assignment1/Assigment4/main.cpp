@@ -23,11 +23,15 @@ int main(int argc, char* argv[])
 	myList.Insert(10);
 
 	myList.DisplayList();
-	//myList.DisplayReverseList();
-	//myList.ModifyContent(5, 30);
-	//myList.DisplayList();
-	//myList.ClearList();
-	//myList.DisplayList();
+
+	std::cout << "\n";
+	myList.PrintReverseList();
+	std::cout << "\n";
+	myList.ModifyContent(5, 30);
+	myList.DisplayList();
+	std::cout << "\n";
+	myList.ClearList();
+	myList.DisplayList();
 	//Queue test
 	myQueue.Enqueue(1);
 	myQueue.Enqueue(2);

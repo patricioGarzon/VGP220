@@ -15,9 +15,10 @@ public:
 	//Inserts the data in the queue.
 	void Enqueue(T data) {
 		if (!isEmpty()) {
-			if (mCurrentSize < mCapacity) {
+			if (mCurrentSize < mCapacity-1) {
 				mData[mCurrentSize] = data;
 				mCurrentSize++;
+				rear++;
 			}
 			else {
 				std::cout << "queu is full";
@@ -36,12 +37,17 @@ public:
 	bool Daqueue(T& output) {
 		if (!isEmpty()) {
 			output = mData[front];
-			front++;
+			for (int x = 0; x < mCurrentSize; x++) {
+				if (mData[x + 1] != NULL) {
+					mData[x] = mData[x + 1];
+				}
+
+			}
+			mCurrentSize--;
 			return true;
+
 		}
-		else {
-			return false;
-		}
+		return false;
 	}
 	
 	//Returns true if queue is empty, false otherwise
@@ -85,4 +91,6 @@ template<typename T>
 inline Queue<T>::~Queue()
 {
 	delete[] mData;
+	mData = nullptr;
+	
 }

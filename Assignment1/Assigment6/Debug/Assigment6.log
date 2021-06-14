@@ -1,2 +1,6 @@
 ﻿  Assigment6.cpp
+C:\Users\nico\Desktop\VGP220\Assignment1\Assigment6\dictionary.h(85,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\nico\Desktop\VGP220\Assignment1\Assigment6\dictionary.h(82): message : while compiling class template member function 'int Dictionary<int>::Hash(const std::string &)'
+C:\Users\nico\Desktop\VGP220\Assignment1\Assigment6\dictionary.h(120): message : see reference to function template instantiation 'int Dictionary<int>::Hash(const std::string &)' being compiled
+C:\Users\nico\Desktop\VGP220\Assignment1\Assigment6\Assigment6.cpp(14): message : see reference to class template instantiation 'Dictionary<int>' being compiled
   Assigment6.vcxproj -> C:\Users\nico\Desktop\VGP220\Assignment1\Debug\Assigment6.exe

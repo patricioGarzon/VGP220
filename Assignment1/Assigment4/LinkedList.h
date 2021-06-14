@@ -118,13 +118,16 @@ public:
 				std::cout << curNode->data << ", ";
 				curNode = curNode->next;
 			}
-		}	
+		}
+		else {
+			std::cout << "List is empty " << std::endl;
+		}
 
 	}
 
 	//ERROR: -5: In a display function, you can't modify the actual data. A good approach to this 
 	// task is to create a recursive function to print like: 
-	/*void printReverse(Node* node)
+	void printReverse(Node* node)
 	{
 		if (node->next != nullptr)
 		{
@@ -132,25 +135,18 @@ public:
 		}
 
 		std::cout << node->data << " ";
-	}*/
+	}
 	//And then call inside DisplayReverseList using mHead as the initial parameter.
 	
 	//Displays all the elements of the linked list in reverse order
-	void DisplayReverseList()
+	void PrintReverseList()
 	{
 		std::cout  << "\n ";
 		// TODO: 2
-		Node* temp = NULL;
-		Node* prev = NULL;
-		Node* current = (mHead);
-		while (current != NULL) {
-			temp = current->next;
-			current->next = prev;
-			prev = current;
-			current = temp;
-		}
-		(mHead) = prev;
-		DisplayList();
+		Node* node = mHead;
+
+		printReverse(node);
+
 		//return list to normal
 	}
 
@@ -168,18 +164,14 @@ public:
 			int x = 0;
 			Node* curNode = mHead;
 			while (curNode != nullptr) {
-				if (x == content) {
-					break;
+				if (curNode->data == content) {
+					curNode->data = newContent;
+					return true;
 				}
-				x++;
+				curNode = curNode->next;
 			}
-			if (curNode->data == content) {
-				curNode->data = newContent;
-				return true;
-			}
-			else {
-				return false;
-			}
+			return false;
+			
 		}
 	}
 
@@ -196,12 +188,12 @@ public:
 		while (current != NULL)
 		{
 			next = current->next;
-			free(current);
+			delete(current);
 			current = next;
 		}
 
-
-		*mHead = NULL;
+		mHead = nullptr;
+	
 	}
 
 private:

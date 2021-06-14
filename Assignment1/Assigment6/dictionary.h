@@ -37,7 +37,7 @@ public:
 		if (mCurrentSize < capacity) {
 	
 			mData = new Data<T>*[mCapacity];
-			for (int x = 0; x < capacity-1; x++) {
+			for (int x = 0; x < capacity; x++) {
 				this->mData[x] = new Data<T>[5];
 				for (int y = 0; y < 5; y++) {
 					mData[x][y].key = "";
@@ -59,6 +59,7 @@ public:
 
 			delete[] mData;
 		};
+		mData = nullptr;
 	}
 
 	//Task 3 - This hash function receives a key and transforms this key into a int that
@@ -93,7 +94,7 @@ public:
 
 	int Hash2(const std::string& key, int seed)
 	{
-
+		int seed = 131;
 		int hash = 0;
 		for (int i = 0; i < key.length(); ++i)
 		{
@@ -101,7 +102,7 @@ public:
 			//a character, the cast is implicit. static_cast<int> in this case is ambiguous.
 			hash += key[i];
 		}
-		hash *= seed;
+		//hash *= seed;
 		return hash % mCapacity;
 	}
 
@@ -113,15 +114,18 @@ public:
 		// Make sure to find two indices (Using your hash functions) and insert to the next available position. If you don't 
 		//	have an available position, print a message to the user saying:
 		// "Element cannot be inserted. Bucket at index %s is full." %s = hashIndex. 
+		Data<T>* newData = new Data<T>; 
+		newData->key = key;
+		newData->value = value;
 		int h = Hash(key);
-		for (int x = 0; x < mCapacity; x++) {
-			for (int y = 0; y < 5; y++) {
-				if (mData[x][y] != nullptr) {
-					Data temp(h, value);
-					mData[x][y] = temp;
-				}
-			}
+		int hfinal = Hash(key);
+		if (mCurrentSize >= mCapacity) {
+			std::cout << "list is full " << std::endl;
 		}
+		else {
+			mData[mCurrentSize] = newData;
+		}
+		mCurrentSize++;
 	}
 
 private:

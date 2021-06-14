@@ -1,2 +1,3 @@
 ﻿  main.cpp
+C:\Users\nico\Desktop\VGP220\Assignment1\Assigment4\LinkedList.h(176): warning C4715: 'LinkedList<int>::ModifyContent': not all control paths return a value
   Assigment4.vcxproj -> C:\Users\nico\Desktop\VGP220\Assignment1\Debug\Assigment4.exe

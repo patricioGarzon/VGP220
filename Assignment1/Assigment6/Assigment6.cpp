@@ -12,7 +12,10 @@ int main()
 {
     std::cout << "Hello World!\n";
     Dictionary<int> dictnry(10);
-
+    dictnry.Insert("nick", 2);
+    dictnry.Insert("santy", 5);
+    dictnry.Insert("jisu", 10);
+    dictnry.Insert("asdsda", 4);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

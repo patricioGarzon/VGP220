@@ -26,7 +26,7 @@ int foo_1(int n)
     }
     return current;
 }
-//Answer: 
+//Answer: O(n)
 
 
 //TODO:
@@ -41,7 +41,7 @@ int pow_a(int m, int n)
     }
     return ret;
 }
-//Answer for pow_a: 
+//Answer for pow_a: O(n)
 
 int pow_b(int m, int n) {
     int ret = 1;
@@ -55,7 +55,7 @@ int pow_b(int m, int n) {
     }
     return ret;
 }
-//Answer for pow_b: 
+//Answer for pow_b: O(2n)
 
 //TODO:
 //Question 3:
@@ -89,7 +89,7 @@ int removeDuplicates(char arr[], int n)
     }
     return len;
 }
-//Answer:
+//Answer: O(3n^3)
 
 //TODO:
 //Question 4: 
@@ -98,7 +98,15 @@ int removeDuplicates(char arr[], int n)
 //For example: Pow(3, 3) means that is 3 ^ 3 and the returned array will be: [1, 3, 9, 27]
 int* Pow(int n, int e)
 {
-    return new int();
+    int* arr;
+    int mult = 1;
+    arr = new int[e] ;
+    arr[0]= mult;
+    for (int x = 1; x <= e; x++) {
+        mult *= 3;
+        arr[x] = mult;
+    }
+    return arr;
 }
 
 //TODO:
@@ -107,7 +115,9 @@ int* Pow(int n, int e)
 // [2, 3, 4, 1, 6, 20, 0]
 void DisplayArray(int* arr, int n)
 {
-
+    for (int x = 0; x < n; x++) {
+        std::cout << arr[x] << " " ;
+    }
 }
 
 //TODO: This question is optional. It's bonus if you don't search or copy anything from the internet.
@@ -128,6 +138,11 @@ void DisplayArray(int* arr, int n)
 //4)The effect of a fall is the same for all eggs.
 //5)If an egg breaks when dropped, then it would break if dropped from a higher floor.
 
+/* Answer
+* we calculate in halfs, 50 - 25 -12 to see where it does not break
+* we save the two values (initial and end) so when the egg survives we can calculate the half between the two 
+* floors it did not break. until we reach the flor which will not break
+*/
 
 int main(int argc, char* argv[])
 {
